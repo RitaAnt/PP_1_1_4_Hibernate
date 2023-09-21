@@ -1,30 +1,60 @@
 package jm.task.core.jdbc.service;
 
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+//import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.model.User;
-
 import java.util.List;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
+
 
 public class UserServiceImpl implements UserService {
-    UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
+//    UserDao userDaoJDBC = new UserDaoJDBCImpl();
+//    public void createUsersTable() {
+//        userDaoJDBC.createUsersTable();
+//    }
+//
+//    public void dropUsersTable() {
+//        userDaoJDBC.dropUsersTable();
+//    }
+//
+//    public void saveUser(String name, String lastName, byte age) {
+//        userDaoJDBC.saveUser(name, lastName, age);
+//    }
+//
+//    public void removeUserById(long id) {
+//        userDaoJDBC. removeUserById(id);
+//    }
+//
+//    public List<User> getAllUsers() {
+//        List<User> users =  userDaoJDBC.getAllUsers();
+//        for (User user : users) {
+//            System.out.println(user);
+//        }
+//        return users;
+//    }
+//
+//    public void cleanUsersTable() {
+//        userDaoJDBC.cleanUsersTable();
+//    }
+    UserDao userDaoHibernate = new UserDaoHibernateImpl();
     public void createUsersTable() {
-        userDaoJDBC.createUsersTable();
+        userDaoHibernate.createUsersTable();
     }
 
     public void dropUsersTable() {
-        userDaoJDBC.dropUsersTable();
+        userDaoHibernate.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        userDaoJDBC.saveUser(name, lastName, age);
+        userDaoHibernate.saveUser(name, lastName, age);
     }
 
     public void removeUserById(long id) {
-        userDaoJDBC. removeUserById(id);
+        userDaoHibernate. removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        List<User> users =  userDaoJDBC.getAllUsers();
+        List<User> users =  userDaoHibernate.getAllUsers();
         for (User user : users) {
             System.out.println(user);
         }
@@ -32,6 +62,6 @@ public class UserServiceImpl implements UserService {
     }
 
     public void cleanUsersTable() {
-        userDaoJDBC.cleanUsersTable();
+        userDaoHibernate.cleanUsersTable();
     }
 }
